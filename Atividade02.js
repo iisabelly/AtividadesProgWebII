@@ -67,26 +67,28 @@ function moverpeca(that) {
         } 
     } else { 
         if (that.querySelector('#red') == null) {
-                if (celulaatual.id == that.id + 1 || celulaatual.id == that.id - 1 || celulaatual.id == that.id){
-                    if (that.querySelector('.img') == null){
-                        that.innerHTML = pecaatual;
-                        celulaatual.innerHTML = "";
-                        selecionado = false;
-                    } else {
-                        alert('Não é possível colocar uma peça aqui! Tente em outra casa.');
-                        }
+            if (celulaatual.id == that.id + 1 || celulaatual.id == that.id - 1 || celulaatual.id == that.id){
+                if (that.querySelector('.img') == null){
+                    that.innerHTML = pecaatual;
+                    celulaatual.innerHTML = "";
+                    selecionado = false;
                 } else {
-                    if (that.id == celulaatual.id + 1 || that.id == celulaatual.id - 1 || that.id == celulaatual.id){
-                        if (that.querySelector('.img') == null){
-                            that.innerHTML = pecaatual;
-                            celulaatual.innerHTML = "";
-                            selecionado = false;
-                        } else {
-                            alert('Não é possível colocar uma peça aqui! Tente em outra casa.');
-                            }
-                    } else {
-                        alert('Não é possível colocar uma peça aqui! Tente em outra casa.');
+                    alert('Não é possível colocar uma peça aqui! Tente em outra casa.');
                 }
+            } else {
+                alert('Não é possível colocar uma peça aqui! Tente em outra casa.');
+            }
+        } else {
+            if (that.id == celulaatual.id + 1 || that.id == celulaatual.id - 1 || that.id == celulaatual.id){
+                if (that.querySelector('.img') == null){
+                    that.innerHTML = pecaatual;
+                    celulaatual.innerHTML = "";
+                    selecionado = false;
+                } else {
+                    alert('Não é possível colocar uma peça aqui! Tente em outra casa.');
+                }
+            } else {
+                alert('Não é possível colocar uma peça aqui! Tente em outra casa.');
             }
         }
     }
