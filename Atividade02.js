@@ -13,7 +13,7 @@ function criaTabuleiro() {
 
         let linha = document.createElement('tr');
         tabela.append(linha);
-        linha.setAttribute('id', i+1);
+        linha.setAttribute('id', i+1)
 
         for (let j = 0; j < tamanho; j++) {
 
@@ -48,7 +48,7 @@ function criapeca(cor) {
     peca.setAttribute('width', `${tamanhoCelula-4}px`);
     peca.setAttribute('height', `${tamanhoCelula-4}px`);
     peca.setAttribute('class', 'img');
-    peca.setAttribute('id', cor);
+    peca.setAttribute('id', cor)
     return peca;
 };
 
@@ -76,20 +76,19 @@ function moverpeca(that) {
                     alert('Não é possível colocar uma peça aqui! Tente em outra casa.');
                 }
             } else {
-                alert('Não é possível colocar uma peça aqui! Tente em outra casa.');
-            }
-        } else {
-            if (that.id == celulaatual.id + 1 || that.id == celulaatual.id - 1 || that.id == celulaatual.id){
-                if (that.querySelector('.img') == null){
-                    that.innerHTML = pecaatual;
-                    celulaatual.innerHTML = "";
-                    selecionado = false;
+                if (that.id == celulaatual.id + 1 || that.id == celulaatual.id - 1 || that.id == celulaatual.id){
+                    if (that.querySelector('.img') == null){
+                        that.innerHTML = pecaatual;
+                        celulaatual.innerHTML = "";
+                        selecionado = false;
+                    } else {
+                        alert('Não é possível colocar uma peça aqui! Tente em outra casa.');
+                        }
                 } else {
                     alert('Não é possível colocar uma peça aqui! Tente em outra casa.');
                 }
-            } else {
-                alert('Não é possível colocar uma peça aqui! Tente em outra casa.');
             }
         }
     }
 };
+
